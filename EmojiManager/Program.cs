@@ -1,4 +1,10 @@
-﻿using static EmojiManager.EmojiClass;
+﻿/**
+ * 项目介绍：这是个表情包管理系统的核心模块，用于管理表情包的加载、保存、分类等功能
+ * 暂时没有做完 Emoji 文件的操作功能，待完善
+ * 暂时没有做完 UI 界面，待完善
+ */
+
+using static EmojiManager.EmojiClass;
 using Newtonsoft.Json;
 namespace EmojiManager
 {
