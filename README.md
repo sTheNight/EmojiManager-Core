@@ -6,4 +6,4 @@
 
 # 依赖
 
-[Newtonsoft.JSON](https://github.com/JamesNK/Newtonsoft.Json) ——没研究过 .NET 标准库的 JSON 用法，遂用此
+[Newtonsoft.JSON](https://github.com/JamesNK/Newtonsoft.Json) ——没研究过 .NET 标准库的 JSON 类用法，遂用此
