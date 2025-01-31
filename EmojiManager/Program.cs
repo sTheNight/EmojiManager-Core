@@ -11,22 +11,18 @@ namespace EmojiManager
     /*
      * Todo List
      * 
-     * ~1. 应当定义一个 EmojiFilePath:string 用于存储保存存储Emoji文件的文件夹路径~
-     * ~2. 将 Emoji 文件移动到对应目录的方法应当采用一个独立的静态类来实现，此类应当包含一个方法用于检查文件是否存在于 EmojiFilePath 中~
-     * ~3. 此静态类可以合并 LoadSaveConfig 类，同时应当涵盖根据文件动态检查内存中的所有 Emoji 是否真实存在~
-     * 
-     * 应当搭配 UI 界面这样在需要使用emoji的时候会更加方便，但我还不会做，因此先把程序的核心功能写好，等以后学会做 UI 后再完善
-     * 
-     * 后续计划：
-     * 
-     * 1. 对于未注册的 Emoji 但存在于 EmojiFilePath/ClassName 的 Emoji 文件而言，应当做一个方法用于询问用户是否将其注册
-     * 2. 学习线程相关知识，将 EmojiManager 作为一个后台线程运行，以便在 UI 界面中实现 Emoji 的动态加载
+     * 1. 全局配置被拆分为了两个类，较为混乱，或许应该将 GlobalVar 与 GlobalConfig合并
+     * 2. 将 Emoji 文件移动到对应目录的方法应当采用一个独立的静态类来实现，此类应当包含一个方法用于检查文件是否存在于 EmojiFilePath 中
+     * 3. 此静态类可以合并 LoadSaveConfig 类，同时应当涵盖根据文件动态检查内存中的所有 Emoji 是否真实存在
+     * 4. 对于未注册的 Emoji 但存在于 EmojiFilePath/ClassName 的 Emoji 文件而言，应当做一个方法用于询问用户是否将其注册
+     * 5. 动态监控表情包文件的变化
      * 
      */
     internal class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("程序入口没有制作，且暂不准备制作");
         }
         internal static void ProgramTest()
         {

@@ -8,7 +8,7 @@ namespace EmojiManager
 {
     public class Emoji
     {
-        // 使用 emojiname 作为文件名的方式过于简单，可以利用 uniqueidentification 作为文件名
+        // 使用 emojiname 作为文件名的方式过于简单，可以利用 uniqueIdentification 作为文件名
         private string emojiName;
         public string uniqueIdentification;
         private Emoji(string emojiName, string uniqueIdentification)
