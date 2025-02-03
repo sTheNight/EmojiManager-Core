@@ -9,10 +9,8 @@ namespace EmojiManager
 {
     internal class GlobalConfig
     {
+        // SupportedExtensions 用于保存支持的文件扩展名，暂未使用
         public List<string> SupportedExtensions = new List<string>();
-    }
-    internal static class GlobalVar
-    {
         public static GlobalConfig Config;
         public static EmojiClassList ClassList;
         public static string CurrentDirectory = Environment.CurrentDirectory;

@@ -6,9 +6,25 @@ using System.Threading.Tasks;
 
 namespace EmojiManager
 {
+    /**
+     * Emoji 结构
+     * EmojiClassList 内包含 EmojiClass，EmojiClass 内包含 Emoji
+     * 
+     * 说明
+     * EmojiClassList 用于管理所有 EmojiClass 分组，EmojiClass 保存该分组的名称信息且管理属于此分组的 Emoji
+     * EmojiClassList 可以通过 Add/RemoveClass 方法来添加或删除 EmojiClass，可以通过 FindClass 来查找分组
+     * EmojiClassList 还可以通过 AddEmojiByClass 方法来添加 Emoji，但是需要传入 Emoji 与 ClassName，此方法实际调用的是对应的 EmojiClass 的 AddEmoji 方法
+     * 
+     * EmojiClass 用于管理 Emoji，EmojiClass 内部包含一个 List<Emoji> 用于保存 Emoji
+     * EmojiClass 可以通过 Add/RemoveEmoji 方法来添加或删除 Emoji，可以通过 FindEmoji 来查找 Emoji
+     * 
+     * Emoji 用于保存 Emoji 的信息，包括 EmojiName 与 uniqueIdentification
+     * 目前设计用 uniqueIdentification 作为文件名，但是未来可能会改变
+     * uniqueIdentification 的生成方式过于简陋，未来可能会优化
+     * 
+     */
     public class Emoji
     {
-        // 使用 emojiname 作为文件名的方式过于简单，可以利用 uniqueIdentification 作为文件名
         private string emojiName;
         public string uniqueIdentification;
         private Emoji(string emojiName, string uniqueIdentification)
@@ -72,8 +88,11 @@ namespace EmojiManager
         {
             // 由于全局只需要一个唯一的 EmojiClassList，所以使用单例模式
             private static List<EmojiClass> emojiClassList = new List<EmojiClass>();
+            [Obsolete("此方法暂时废除，因为同一个 Emoji 可能存在于不同的 Class 之中，目前暂未处理此逻辑",true)]
             public Emoji FindEmoji(string uniqueIdentification)
             {
+                // 由于同一个 Emoji 可能存在于不同的 Class 之中，此方法暂时废除
+
                 // 第一层遍历 ClassList 的 Class
                 foreach (var emojiclass in emojiClassList)
                 {
