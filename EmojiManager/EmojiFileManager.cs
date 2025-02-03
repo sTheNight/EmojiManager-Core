@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmojiManager
 {
+    // 目前遇到错误会直接 Return false，未来应当考虑添加异常处理
     internal static class EmojiFileManager
     {
         // destinationPath 应当传入 EmojiFilePath + ClassName
@@ -13,6 +14,10 @@ namespace EmojiManager
         {
             try
             {
+                if (!Directory.Exists(destinationPath))
+                {
+                    Directory.CreateDirectory(destinationPath);
+                }
                 File.Move(originPath, $"{destinationPath}/{emoji.uniqueIdentification}.{Path.GetExtension(originPath)}");
                 return true;
             }
